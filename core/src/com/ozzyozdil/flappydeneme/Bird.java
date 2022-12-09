@@ -1,6 +1,5 @@
 package com.ozzyozdil.flappydeneme;
 
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.addAction;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;

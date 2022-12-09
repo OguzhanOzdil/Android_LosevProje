@@ -21,9 +21,7 @@ public class Assets {
     public static Sound sfxBing;
     public static Sound sfxDie;
     public static Sound sfxWoosh;
-
-
-
+    
     // Non-Disposeables
     public static TextureRegion bird;
     public static TextureRegion bird2;
