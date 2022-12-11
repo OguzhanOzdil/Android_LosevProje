@@ -22,6 +22,7 @@ public class MainMenuScreen extends ScreenAdapter {
     private Label titleLabel;
     private Button playButton;
     private Button creditsButton;
+    private Button skinButton;
     private Image backgroundBuildings;
     private Ground ground;
 
@@ -32,6 +33,7 @@ public class MainMenuScreen extends ScreenAdapter {
 
         initPlayButton();
         initCreditsButton();
+        initSkinButton();
 
         ground = new Ground();
 
@@ -45,6 +47,7 @@ public class MainMenuScreen extends ScreenAdapter {
         stage.addActor(titleLabel);
         stage.addActor(playButton);
         stage.addActor(creditsButton);
+        stage.addActor(skinButton);
 
         Gdx.input.setInputProcessor(stage);
     }
@@ -75,12 +78,27 @@ public class MainMenuScreen extends ScreenAdapter {
         creditsButton = new Button(new TextureRegionDrawable(Assets.creditsUp), new TextureRegionDrawable(Assets.creditsDown));
         creditsButton.setWidth(96);
         creditsButton.setHeight(48);
-        creditsButton.setPosition(FlappyDeneme.WIDTH/2, FlappyDeneme.HEIGHT *.28f, Align.center);
+        creditsButton.setPosition(FlappyDeneme.WIDTH/2 - 55, FlappyDeneme.HEIGHT *.28f, Align.center);
         creditsButton.addListener(new ClickListener(){
 
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new CreditsScreen(game));
+
+            }
+        });
+    }
+
+    private void initSkinButton() {
+        skinButton = new Button(new TextureRegionDrawable(Assets.creditsUp), new TextureRegionDrawable(Assets.creditsDown));
+        skinButton.setWidth(96);
+        skinButton.setHeight(48);
+        skinButton.setPosition(FlappyDeneme.WIDTH/2 + 55, FlappyDeneme.HEIGHT *.28f, Align.center);
+        skinButton.addListener(new ClickListener(){
+
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                game.setScreen(new SkinScreen(game));
 
             }
         });

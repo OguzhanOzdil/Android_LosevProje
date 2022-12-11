@@ -50,6 +50,38 @@ public class Assets {
     public static Animation birdAnimation;
     public static Animation rubyAnimation;
 
+    public static TextureRegion getBird() {
+        return bird;
+    }
+
+    public static void setBird(TextureRegion bird) {
+        Assets.bird = bird;
+    }
+
+    public static TextureRegion getBird2() {
+        return bird2;
+    }
+
+    public static void setBird2(TextureRegion bird2) {
+        Assets.bird2 = bird2;
+    }
+
+    public static TextureRegion getBird3() {
+        return bird3;
+    }
+
+    public static void setBird3(TextureRegion bird3) {
+        Assets.bird3 = bird3;
+    }
+
+    public static TextureRegion getBird4() {
+        return birdDead;
+    }
+
+    public static void setBird4(TextureRegion bird4) {
+        Assets.birdDead = bird4;
+    }
+
     public static void load() {
 
         atlas = new TextureAtlas("pack.atlas");
@@ -82,7 +114,7 @@ public class Assets {
         ruby6 = atlas.findRegion("ruby6");
 
 
-        birdAnimation = new Animation(.1f, bird, bird2, bird3);
+        birdAnimation = new Animation(.1f, getBird(), getBird2(), getBird3());
         birdAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
 
         Array<TextureRegion> rubyArray = new Array<TextureRegion>();

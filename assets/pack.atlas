@@ -14,8 +14,8 @@ background-buildings
 ground-321x96
   rotate: false
   xy: 2, 112
-  size: 321, 96
-  orig: 321, 96
+  size: 321, 88
+  orig: 321, 88
   offset: 0, 0
   index: -1
 peng
