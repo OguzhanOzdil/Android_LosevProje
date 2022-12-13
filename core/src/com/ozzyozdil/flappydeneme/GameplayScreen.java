@@ -166,8 +166,8 @@ public class GameplayScreen extends ScreenAdapter {
         checkCollisions();
         if (bird.getState() == Bird.State.DYING) {
             stopTheWorld();
-
-
+            SavedDataManager.getInstance().setHighScore(score);
+            SavedDataManager.getInstance().setTotalMoney(score);
 
             RunnableAction playWooshAction = Actions.run(new Runnable() {
                 @Override
@@ -231,8 +231,6 @@ public class GameplayScreen extends ScreenAdapter {
             PipePair pair = pipePairs.get(i);
             if (pair.getBottomPipe().getBounds().overlaps(bird.getBounds()) || pair.getTopPipe().getBounds().overlaps(bird.getBounds())) {
                 stopTheWorld();
-                SavedDataManager.getInstance().setHighScore(score);
-                SavedDataManager.getInstance().setTotalMoney(score);
                 showWhiteScreen();
             } else if (bird.isBelowGround()) {
                 bird.setY(FlappyDeneme.GROUND_LEVEL);
