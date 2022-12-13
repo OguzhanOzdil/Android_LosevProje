@@ -47,7 +47,9 @@ public class SavedDataManager {
 
 
     public void setTotalMoney(int score) {
-        totalMoney += score;
+        if (score % score == 0){
+            totalMoney += score;
+        }
     }
 
     public int getTotalMoney(){
