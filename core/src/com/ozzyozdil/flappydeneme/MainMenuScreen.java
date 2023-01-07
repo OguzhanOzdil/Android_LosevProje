@@ -1,9 +1,12 @@
 package com.ozzyozdil.flappydeneme;
 
+import static com.ozzyozdil.flappydeneme.Assets.batch;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -20,10 +23,12 @@ public class MainMenuScreen extends ScreenAdapter {
     private Stage stage;
 
     private Label titleLabel;
+
     private Button playButton;
     private Button creditsButton;
     private Button skinButton;
     private Image backgroundBuildings;
+    private Image logo;
     private Ground ground;
 
     public MainMenuScreen(FlappyDeneme game) {
@@ -37,10 +42,20 @@ public class MainMenuScreen extends ScreenAdapter {
 
         ground = new Ground();
 
-        titleLabel = new Label("Bird vs. Pipes", new Label.LabelStyle(Assets.fontMedium, Color.WHITE));
-        titleLabel.setPosition(FlappyDeneme.CENTER_X, FlappyDeneme.HEIGHT *.75f, Align.center);
+        titleLabel = new Label("Bu oyunu Losev adi altinda\n" +
+                " bagis toplamayi, insanlar\n" +
+                " icin hem eglenceli hem de \n" +
+                "devamli hale getirmek icin \n" +
+                "             yapilmistir.", new Label.LabelStyle(Assets.fontMedium, Color.WHITE));
+        titleLabel.setPosition(FlappyDeneme.CENTER_X - 143, FlappyDeneme.HEIGHT - 250);
+        titleLabel.setFontScale(0.8f,0.8f);
 
         initBackgroundBuildings();
+
+        logo = new Image(Assets.logo);
+        logo.setWidth(208);
+        logo.setHeight(112);
+        logo.setPosition(FlappyDeneme.WIDTH / 2 - 100, FlappyDeneme.HEIGHT/ 2 + 108);
 
         stage.addActor(ground);
         stage.addActor(backgroundBuildings);
@@ -48,6 +63,7 @@ public class MainMenuScreen extends ScreenAdapter {
         stage.addActor(playButton);
         stage.addActor(creditsButton);
         stage.addActor(skinButton);
+        stage.addActor(logo);
 
         Gdx.input.setInputProcessor(stage);
     }
@@ -78,7 +94,7 @@ public class MainMenuScreen extends ScreenAdapter {
         creditsButton = new Button(new TextureRegionDrawable(Assets.creditsUp), new TextureRegionDrawable(Assets.creditsDown));
         creditsButton.setWidth(96);
         creditsButton.setHeight(48);
-        creditsButton.setPosition(FlappyDeneme.WIDTH/2 - 55, FlappyDeneme.HEIGHT *.28f, Align.center);
+        creditsButton.setPosition(FlappyDeneme.WIDTH/2 + 55, FlappyDeneme.HEIGHT *.28f, Align.center);
         creditsButton.addListener(new ClickListener(){
 
             @Override
@@ -93,7 +109,7 @@ public class MainMenuScreen extends ScreenAdapter {
         skinButton = new Button(new TextureRegionDrawable(Assets.creditsUp), new TextureRegionDrawable(Assets.creditsDown));
         skinButton.setWidth(96);
         skinButton.setHeight(48);
-        skinButton.setPosition(FlappyDeneme.WIDTH/2 + 55, FlappyDeneme.HEIGHT *.28f, Align.center);
+        skinButton.setPosition(FlappyDeneme.WIDTH/2 - 55, FlappyDeneme.HEIGHT *.28f, Align.center);
         skinButton.addListener(new ClickListener(){
 
             @Override

@@ -1,6 +1,6 @@
 
 pack.png
-size: 512,256
+size: 1024,512
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
@@ -18,6 +18,13 @@ ground-321x96
   orig: 321, 88
   offset: 0, 0
   index: -1
+pembekus
+  rotate: false
+  xy: 443, 18
+  size: 16, 14
+  orig: 16, 14
+  offset: 0, 0
+  index: -1
 peng
   rotate: false
   xy: 414, 18
@@ -27,9 +34,9 @@ peng
   index: -1
 peng-dead
   rotate: false
-  xy: 2, 2
-  size: 16, 16
-  orig: 16, 16
+  xy: 390, 20
+  size: 20, 13
+  orig: 20, 13
   offset: 0, 0
   index: -1
 peng2
@@ -51,6 +58,13 @@ pipe-32x200
   xy: 325, 8
   size: 32, 200
   orig: 32, 200
+  offset: 0, 0
+  index: -1
+logo
+  rotate: false
+  xy: 2, 208
+  size: 618, 507
+  orig: 618, 507
   offset: 0, 0
   index: -1
 play_down
@@ -97,7 +111,7 @@ credits_up
   index: -1
 credits_about
   rotate: false
-  xy: 409, 47
+  xy: 358, 36
   size: 71, 128
   orig: 71, 128
   offset: 0, 0

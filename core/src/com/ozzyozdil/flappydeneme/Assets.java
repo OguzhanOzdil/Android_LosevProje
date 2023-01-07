@@ -45,42 +45,12 @@ public class Assets {
     public static TextureRegion ruby4;
     public static TextureRegion ruby5;
     public static TextureRegion ruby6;
+    public static TextureRegion logo;
+    public static TextureRegion pembeKus;
 
     // Animations
     public static Animation birdAnimation;
     public static Animation rubyAnimation;
-
-    public static TextureRegion getBird() {
-        return bird;
-    }
-
-    public static void setBird(TextureRegion bird) {
-        Assets.bird = bird;
-    }
-
-    public static TextureRegion getBird2() {
-        return bird2;
-    }
-
-    public static void setBird2(TextureRegion bird2) {
-        Assets.bird2 = bird2;
-    }
-
-    public static TextureRegion getBird3() {
-        return bird3;
-    }
-
-    public static void setBird3(TextureRegion bird3) {
-        Assets.bird3 = bird3;
-    }
-
-    public static TextureRegion getBird4() {
-        return birdDead;
-    }
-
-    public static void setBird4(TextureRegion bird4) {
-        Assets.birdDead = bird4;
-    }
 
     public static void load() {
 
@@ -93,6 +63,8 @@ public class Assets {
         bird2 = atlas.findRegion("peng2");
         bird3 = atlas.findRegion("peng3");
         birdDead = atlas.findRegion("peng-dead");
+
+        pembeKus = atlas.findRegion("pembekus");
 
         backgroundBuildings = atlas.findRegion("background-buildings");
         ground = atlas.findRegion("ground-321x96");
@@ -112,7 +84,7 @@ public class Assets {
         ruby4 = atlas.findRegion("ruby4");
         ruby5 = atlas.findRegion("ruby5");
         ruby6 = atlas.findRegion("ruby6");
-
+        logo = atlas.findRegion("logo");
 
         birdAnimation = new Animation(.1f, getBird(), getBird2(), getBird3());
         birdAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
@@ -163,6 +135,38 @@ public class Assets {
         sfxBing.dispose();
         sfxDie.dispose();
         sfxWoosh.dispose();
+    }
+
+    public static TextureRegion getBird() {
+        return bird;
+    }
+
+    public static void setBird(TextureRegion bird) {
+        Assets.bird = bird;
+    }
+
+    public static TextureRegion getBird2() {
+        return bird2;
+    }
+
+    public static void setBird2(TextureRegion bird2) {
+        Assets.bird2 = bird2;
+    }
+
+    public static TextureRegion getBird3() {
+        return bird3;
+    }
+
+    public static void setBird3(TextureRegion bird3) {
+        Assets.bird3 = bird3;
+    }
+
+    public static TextureRegion getBird4() {
+        return birdDead;
+    }
+
+    public static void setBird4(TextureRegion bird4) {
+        Assets.birdDead = bird4;
     }
 
     public static void playPunchSound(){
