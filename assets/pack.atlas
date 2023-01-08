@@ -14,8 +14,8 @@ background-buildings
 ground-321x96
   rotate: false
   xy: 2, 112
-  size: 321, 88
-  orig: 321, 88
+  size: 320, 94
+  orig: 320, 94
   offset: 0, 0
   index: -1
 pembekus
@@ -65,6 +65,20 @@ logo
   xy: 2, 208
   size: 618, 507
   orig: 618, 507
+  offset: 0, 0
+  index: -1
+skin_down
+  rotate: false
+  xy: 434, 116
+  size: 48, 22
+  orig: 48, 22
+  offset: 0, 0
+  index: -1
+skin_up
+  rotate: false
+  xy: 434, 91
+  size: 48, 24
+  orig: 48, 24
   offset: 0, 0
   index: -1
 play_down

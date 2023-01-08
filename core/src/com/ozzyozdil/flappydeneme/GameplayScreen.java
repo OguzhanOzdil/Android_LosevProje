@@ -77,7 +77,7 @@ public class GameplayScreen extends ScreenAdapter {
         scoreLabel.setPosition(FlappyDeneme.WIDTH / 2, FlappyDeneme.HEIGHT * .9f, Align.center);
         uiStage.addActor(scoreLabel);
 
-        tapToRetry = new Label("Tap To Retry!", new Label.LabelStyle(Assets.fontMedium, Color.WHITE));
+        tapToRetry = new Label("", new Label.LabelStyle(Assets.fontMedium, Color.WHITE));
         tapToRetry.setPosition(FlappyDeneme.WIDTH / 2, 0, Align.top);
         uiStage.addActor(tapToRetry);
 
@@ -189,11 +189,11 @@ public class GameplayScreen extends ScreenAdapter {
 
             best.setText("Best: " + SavedDataManager.getInstance().getHighScore());
             best.setPosition(FlappyDeneme.WIDTH / 2 - 10, 0, Align.top);
-            best.addAction(Actions.delay(1f, Actions.moveToAligned(FlappyDeneme.CENTER_X - 10, FlappyDeneme.CENTER_Y, Align.top, .75f, Interpolation.sine)));
+            best.addAction(Actions.delay(1f, Actions.moveToAligned(FlappyDeneme.CENTER_X - 10, FlappyDeneme.CENTER_Y + 50, Align.top, .75f, Interpolation.sine)));
 
             money.setText("Money: " + SavedDataManager.getInstance().getTotalMoney());
             money.setPosition(FlappyDeneme.WIDTH / 2 - 10, 0, Align.top);
-            money.addAction(Actions.delay(1f, Actions.moveToAligned(FlappyDeneme.CENTER_X - 10, FlappyDeneme.CENTER_Y - 30, Align.top, .75f, Interpolation.sine)));
+            money.addAction(Actions.delay(1f, Actions.moveToAligned(FlappyDeneme.CENTER_X - 10, FlappyDeneme.CENTER_Y + 20, Align.top, .75f, Interpolation.sine)));
 
             screenState = State.DYING;
         }

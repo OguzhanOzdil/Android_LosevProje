@@ -39,15 +39,15 @@ public class Utils {
         }
         else if (random == 1){
             // A light purple color
-            r = 153f/255f;
-            g = 102f/255f;
+            r = 204f/255f;
+            g = 204f/255f;
             b = 255f/255f;
         }
         else {
             // A light peach color
-            r = 255f/255f;
+            r = 204f/255f;
             g = 204f/255f;
-            b = 153f/255f;
+            b = 255f/255f;
         }
 
         return new Color(r, g, b, 1f);

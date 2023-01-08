@@ -106,7 +106,7 @@ public class MainMenuScreen extends ScreenAdapter {
     }
 
     private void initSkinButton() {
-        skinButton = new Button(new TextureRegionDrawable(Assets.creditsUp), new TextureRegionDrawable(Assets.creditsDown));
+        skinButton = new Button(new TextureRegionDrawable(Assets.skinDown), new TextureRegionDrawable(Assets.skinUp));
         skinButton.setWidth(96);
         skinButton.setHeight(48);
         skinButton.setPosition(FlappyDeneme.WIDTH/2 - 55, FlappyDeneme.HEIGHT *.28f, Align.center);

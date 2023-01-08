@@ -33,6 +33,8 @@ public class Assets {
     public static TextureRegion title;
     public static TextureRegion playDown;
     public static TextureRegion playUp;
+    public static TextureRegion skinDown;
+    public static TextureRegion skinUp;
     public static TextureRegion backDown;
     public static TextureRegion backUp;
     public static TextureRegion creditsDown;
@@ -72,6 +74,8 @@ public class Assets {
         title = atlas.findRegion("title");
         playDown = atlas.findRegion("play_down");
         playUp = atlas.findRegion("play_up");
+        skinDown = atlas.findRegion("skin_down");
+        skinUp = atlas.findRegion("skin_up");
         backDown = atlas.findRegion("back_down");
         backUp = atlas.findRegion("back_up");
         creditsDown = atlas.findRegion("credits_down");
