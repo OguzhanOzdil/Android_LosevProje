@@ -1,5 +1,7 @@
 package com.ozzyozdil.flappydeneme;
 
+import static com.ozzyozdil.flappydeneme.MainMenuScreen.reklamKontrol;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
@@ -61,6 +63,8 @@ public class GameplayScreen extends ScreenAdapter {
 
     public GameplayScreen(FlappyDeneme game) {
         this.game = game;
+
+        reklamKontrol = "hide";
 
         camera = new OrthographicCamera(FlappyDeneme.WIDTH, FlappyDeneme.HEIGHT);
         gameplayStage = new Stage(new StretchViewport(FlappyDeneme.WIDTH, FlappyDeneme.HEIGHT, camera));

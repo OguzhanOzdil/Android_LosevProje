@@ -1,5 +1,7 @@
 package com.ozzyozdil.flappydeneme;
 
+import static com.ozzyozdil.flappydeneme.MainMenuScreen.reklamKontrol;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
@@ -30,6 +32,8 @@ public class CreditsScreen extends ScreenAdapter {
 
         this.game = game;
         stage = new Stage(new StretchViewport(FlappyDeneme.WIDTH, FlappyDeneme.HEIGHT));
+
+        reklamKontrol = "hide";
 
         creditsAbout();
         initBackButton();

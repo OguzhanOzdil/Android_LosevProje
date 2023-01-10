@@ -3,6 +3,7 @@ package com.ozzyozdil.flappydeneme;
 import static com.ozzyozdil.flappydeneme.Assets.atlas;
 import static com.ozzyozdil.flappydeneme.Assets.setBird;
 import static com.ozzyozdil.flappydeneme.Assets.setBird2;
+import static com.ozzyozdil.flappydeneme.MainMenuScreen.reklamKontrol;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
@@ -38,6 +39,8 @@ public class SkinScreen extends ScreenAdapter {
 
         this.game = game;
         stage = new Stage(new StretchViewport(FlappyDeneme.WIDTH, FlappyDeneme.HEIGHT));
+
+        reklamKontrol = "hide";
 
         skins();
         initBackButton();

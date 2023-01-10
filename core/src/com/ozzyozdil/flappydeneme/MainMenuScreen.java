@@ -1,14 +1,9 @@
 package com.ozzyozdil.flappydeneme;
 
-import static com.ozzyozdil.flappydeneme.Assets.atlas;
-import static com.ozzyozdil.flappydeneme.Assets.batch;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -34,8 +29,9 @@ public class MainMenuScreen extends ScreenAdapter {
     private Ground ground;
 
     private Image reklam;
-    public static TextureRegion reklamRegion;
     private Button backButton;
+    public static String reklamKontrol = "show";
+
 
     public MainMenuScreen(FlappyDeneme game) {
 
@@ -73,8 +69,11 @@ public class MainMenuScreen extends ScreenAdapter {
         stage.addActor(creditsButton);
         stage.addActor(skinButton);
         stage.addActor(logo);
-        stage.addActor(reklam);
-        stage.addActor(backButton);
+        if (reklamKontrol.equals("show")){
+            stage.addActor(reklam);
+            stage.addActor(backButton);
+        }
+
 
         Gdx.input.setInputProcessor(stage);
     }
@@ -84,7 +83,6 @@ public class MainMenuScreen extends ScreenAdapter {
         reklam.setWidth(250);
         reklam.setHeight(250);
         reklam.setPosition(FlappyDeneme.WIDTH/2, FlappyDeneme.HEIGHT*.65f, Align.center);
-
     }
 
     private void initBackButton() {
@@ -119,7 +117,6 @@ public class MainMenuScreen extends ScreenAdapter {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new GameplayScreen(game));
-
             }
         });
     }
@@ -134,7 +131,6 @@ public class MainMenuScreen extends ScreenAdapter {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new CreditsScreen(game));
-
             }
         });
     }
@@ -149,7 +145,6 @@ public class MainMenuScreen extends ScreenAdapter {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new SkinScreen(game));
-
             }
         });
     }
@@ -162,5 +157,6 @@ public class MainMenuScreen extends ScreenAdapter {
 
         stage.act();
         stage.draw();
+
     }
 }
