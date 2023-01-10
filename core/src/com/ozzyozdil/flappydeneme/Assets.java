@@ -49,6 +49,7 @@ public class Assets {
     public static TextureRegion ruby6;
     public static TextureRegion logo;
     public static TextureRegion pembeKus;
+    public static TextureRegion reklam;
 
     // Animations
     public static Animation birdAnimation;
@@ -67,6 +68,8 @@ public class Assets {
         birdDead = atlas.findRegion("peng-dead");
 
         pembeKus = atlas.findRegion("pembekus");
+
+        reklam = atlas.findRegion("reklam");
 
         backgroundBuildings = atlas.findRegion("background-buildings");
         ground = atlas.findRegion("ground-321x96");

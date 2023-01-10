@@ -25,6 +25,13 @@ pembekus
   orig: 16, 14
   offset: 0, 0
   index: -1
+reklam
+  rotate: false
+  xy: 624, 16
+  size: 375, 375
+  orig: 375, 375
+  offset: 0, 0
+  index: -1
 peng
   rotate: false
   xy: 414, 18

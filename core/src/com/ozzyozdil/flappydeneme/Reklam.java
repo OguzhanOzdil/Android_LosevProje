@@ -51,19 +51,19 @@ public class Reklam extends ScreenAdapter {
     }
 
     private void reklamYerlestir() {
-        reklam = new Image(new TextureRegionDrawable(Assets.bird3));
-        reklam.setWidth(32);
-        reklam.setHeight(32);
-        reklam.setPosition(FlappyDeneme.WIDTH/2, FlappyDeneme.HEIGHT*.75f, Align.center);
-        reklam.addListener(new ClickListener(){
+        reklam = new Image(new TextureRegionDrawable(Assets.reklam));
+        reklam.setWidth(250);
+        reklam.setHeight(250);
+        reklam.setPosition(FlappyDeneme.WIDTH/2, FlappyDeneme.HEIGHT*.65f, Align.center);
+        /*reklam.addListener(new ClickListener(){
 
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                reklamRegion = atlas.findRegion("peng");
+                reklamRegion = atlas.findRegion("reklam");
                 setBird(reklamRegion);
                 game.setScreen(new MainMenuScreen(game));
             }
-        });
+        });*/
     }
 
     private void initBackButton() {
