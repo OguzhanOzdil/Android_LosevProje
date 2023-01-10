@@ -1,5 +1,6 @@
 package com.ozzyozdil.flappydeneme;
 
+import static com.ozzyozdil.flappydeneme.Assets.atlas;
 import static com.ozzyozdil.flappydeneme.Assets.batch;
 
 import com.badlogic.gdx.Gdx;
@@ -7,6 +8,7 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -31,10 +33,17 @@ public class MainMenuScreen extends ScreenAdapter {
     private Image logo;
     private Ground ground;
 
+    private Image reklam;
+    public static TextureRegion reklamRegion;
+    private Button backButton;
+
     public MainMenuScreen(FlappyDeneme game) {
 
         this.game = game;
         stage = new Stage(new StretchViewport(FlappyDeneme.WIDTH, FlappyDeneme.HEIGHT));
+
+        reklamYerlestir();
+        initBackButton();
 
         initPlayButton();
         initCreditsButton();
@@ -64,8 +73,33 @@ public class MainMenuScreen extends ScreenAdapter {
         stage.addActor(creditsButton);
         stage.addActor(skinButton);
         stage.addActor(logo);
+        stage.addActor(reklam);
+        stage.addActor(backButton);
 
         Gdx.input.setInputProcessor(stage);
+    }
+
+    private void reklamYerlestir() {
+        reklam = new Image(new TextureRegionDrawable(Assets.reklam));
+        reklam.setWidth(250);
+        reklam.setHeight(250);
+        reklam.setPosition(FlappyDeneme.WIDTH/2, FlappyDeneme.HEIGHT*.65f, Align.center);
+
+    }
+
+    private void initBackButton() {
+        backButton = new Button(new TextureRegionDrawable(Assets.backUp), new TextureRegionDrawable(Assets.backDown));
+        backButton.setWidth(96);
+        backButton.setHeight(48);
+        backButton.setPosition(FlappyDeneme.WIDTH/2, FlappyDeneme.HEIGHT*.10f, Align.center);
+        backButton.addListener(new ClickListener(){
+
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                reklam.setVisible(false);
+                backButton.setVisible(false);
+            }
+        });
     }
 
     private void initBackgroundBuildings() {

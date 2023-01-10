@@ -14,7 +14,7 @@ public class FlappyDeneme extends Game {
 	public void create () {
 		Assets.load();
 		SavedDataManager.getInstance().load();
-		setScreen(new Reklam(this));
+		setScreen(new MainMenuScreen(this));
 	}
 
 	@Override
